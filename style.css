@@ -1,0 +1,121 @@
+/* GAYA DASAR */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Latar belakang abu-abu muda */
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+/* GAYA DASAR UNTUK TAUTAN */
+a {
+    color: #007bff;
+    text-decoration: none;
+    /* 1. ANIMASI: TRANSISI WARNA DASAR */
+    transition: color 0.3s ease; /* Transisi warna selama 0.3 detik */
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 20px auto;
+}
+
+/* GAYA KHUSUS TOMBOL */
+.button {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    /* 2. ANIMASI: TRANSISI UNTUK HOVER TOMBOL */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background: #0056b3;
+    /* 3. ANIMASI: EFEK PERBESARAN SAAT DIARAHKAN */
+    transform: scale(1.05); /* Memperbesar tombol 5% */
+}
+
+/* GAYA FOOTER */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* ==================================== */
+/* ANIMASI KHUSUS */
+/* ==================================== */
+
+/* 4. ANIMASI: FADE-IN SAAT MEMUAT (Untuk Elemen Section) */
+
+/* Definisi Keyframe */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Mulai dari tidak terlihat */
+        transform: translateY(20px); /* Mulai sedikit di bawah */
+    }
+    to {
+        opacity: 1; /* Berakhir pada terlihat penuh */
+        transform: translateY(0);
+    }
+}
+
+/* Aplikasikan Animasi ke Semua Bagian (Section) kecuali Header */
+#home, #about, #projects, #contact {
+    opacity: 0; /* Pastikan elemen tersembunyi sebelum animasi */
+    animation: fadeIn 1s ease-out forwards; /* Terapkan animasi selama 1 detik */
+}
+
+/* Atur delay agar setiap bagian muncul berurutan */
+#home {
+    animation-delay: 0.1s;
+}
+
+#about {
+    animation-delay: 0.5s;
+}
+
+#projects {
+    animation-delay: 0.9s;
+}
+
+#contact {
+    animation-delay: 1.3s;
+}
